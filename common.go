@@ -288,7 +288,7 @@ type FileInformation struct {
 	// available. Left out in abridged version.
 	GCodeAnalysis GCodeAnalysisInformation `json:"gcodeAnalysis"`
 	// Print information from the print stats of a file.
-	Print PrintStats `json:"print"`
+	Print PrintStats `json:"prints"`
 }
 
 // IsFolder it returns true if the file is a folder.
@@ -334,9 +334,11 @@ type PrintStats struct {
 	// Last print information.
 	Last struct {
 		// Date of the last print.
-		Date JSONTime `json:"date"`
+		Date float64 `json:"date"`
 		// Success or not.
 		Success bool `json:"success"`
+		// Last Print Duration
+		PrintTime float64 `json:"printTime"`
 	} `json:"last"`
 }
 
