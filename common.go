@@ -33,6 +33,8 @@ type JobResponse struct {
 	Job JobInformation `json:"job"`
 	// Progress contains information regarding the progress of the current job.
 	Progress ProgressInformation `json:"progress"`
+	// State is a textual representation of the current state of the job, i.e. “Operational”, “Printing”, “Pausing”, “Paused”, “Cancelling”, “Error” or “Offline”.
+	State string
 }
 
 // JobInformation contains information regarding the target of the current job.
